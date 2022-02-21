@@ -14,6 +14,8 @@
 		6DABCF0627C20BC000398896 /* SBInputScriptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF0527C20BC000398896 /* SBInputScriptVC.swift */; };
 		6DABCF0827C20C0E00398896 /* SBInputScriptSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DABCF0727C20C0E00398896 /* SBInputScriptSB.storyboard */; };
 		6DABCF0B27C2A35F00398896 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF0A27C2A35F00398896 /* ViewController+Extension.swift */; };
+		6DABCF0E27C3FC0500398896 /* SBSentenceBreaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF0D27C3FC0500398896 /* SBSentenceBreaker.swift */; };
+		6DABCF1027C3FD2400398896 /* SBVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF0F27C3FD2400398896 /* SBVocabulary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		6DABCF0527C20BC000398896 /* SBInputScriptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBInputScriptVC.swift; sourceTree = "<group>"; };
 		6DABCF0727C20C0E00398896 /* SBInputScriptSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SBInputScriptSB.storyboard; sourceTree = "<group>"; };
 		6DABCF0A27C2A35F00398896 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		6DABCF0D27C3FC0500398896 /* SBSentenceBreaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBSentenceBreaker.swift; sourceTree = "<group>"; };
+		6DABCF0F27C3FD2400398896 /* SBVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBVocabulary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,10 @@
 		6DABCEEE27C2091F00398896 /* scriptBreaker */ = {
 			isa = PBXGroup;
 			children = (
-				6DABCF0927C2A34A00398896 /* Extension */,
 				6DABCF0427C2097500398896 /* StoryBoard */,
 				6DABCF0327C2096F00398896 /* ViewController */,
+				6DABCF0C27C3FBEE00398896 /* Model */,
+				6DABCF0927C2A34A00398896 /* Extension */,
 				6DABCEEF27C2091F00398896 /* AppDelegate.swift */,
 				6DABCEF127C2091F00398896 /* SceneDelegate.swift */,
 				6DABCEF827C2092100398896 /* Assets.xcassets */,
@@ -92,6 +97,15 @@
 				6DABCF0A27C2A35F00398896 /* ViewController+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		6DABCF0C27C3FBEE00398896 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6DABCF0D27C3FC0500398896 /* SBSentenceBreaker.swift */,
+				6DABCF0F27C3FD2400398896 /* SBVocabulary.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DABCF0E27C3FC0500398896 /* SBSentenceBreaker.swift in Sources */,
 				6DABCF0B27C2A35F00398896 /* ViewController+Extension.swift in Sources */,
+				6DABCF1027C3FD2400398896 /* SBVocabulary.swift in Sources */,
 				6DABCEF027C2091F00398896 /* AppDelegate.swift in Sources */,
 				6DABCEF227C2091F00398896 /* SceneDelegate.swift in Sources */,
 				6DABCF0627C20BC000398896 /* SBInputScriptVC.swift in Sources */,

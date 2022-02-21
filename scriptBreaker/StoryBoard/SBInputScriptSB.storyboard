@@ -60,6 +60,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="breakDownBTN" destination="UXT-Zu-Jev" id="YxG-78-MgB"/>
                         <outlet property="breakDownBTNBottom" destination="DSY-op-7KZ" id="8rF-MQ-C7C"/>
                         <outlet property="scriptTV" destination="DTm-8J-Nef" id="yUy-Sa-nGY"/>
                     </connections>

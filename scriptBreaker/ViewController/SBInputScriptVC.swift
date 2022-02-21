@@ -11,10 +11,14 @@ class SBInputScriptVC: UIViewController {
 
     @IBOutlet weak var scriptTV: UITextView!
     @IBOutlet weak var breakDownBTNBottom: NSLayoutConstraint!
+    @IBOutlet weak var breakDownBTN: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        breakDownBTN.addTarget(self, action: #selector(breakDownPressed), for: .touchUpInside)
+        
         setUI()
         hideKeyboardWhenTappedAround()
         
@@ -34,10 +38,16 @@ class SBInputScriptVC: UIViewController {
         removeKeyboardNotification()
     }
     
+    
     func setUI() {
         scriptTV.layer.borderWidth = 1
         scriptTV.layer.borderColor = UIColor.gray.cgColor
         scriptTV.layer.cornerRadius = 6
+    }
+    
+    
+    @objc func breakDownPressed() {
+        
     }
     
     
