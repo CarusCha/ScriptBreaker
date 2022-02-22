@@ -1,5 +1,5 @@
 //
-//  SBVocabulary.swift
+//  SBWord.swift
 //  scriptBreaker
 //
 //  Created by carus on 22/2/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SBVocabulary {
+class SBWord {
     enum WordClass {
         case noun
         case verb
@@ -15,8 +15,13 @@ struct SBVocabulary {
         case adjective
     }
     
-    var word: String
-    var sentense: String
+    var word: String?
+    weak var sentence: SBSentence?
     var meaning: String?
+    var phrase: String?
     var wordClass: WordClass?
+    
+    init(_ word: String) {
+        self.word = word
+    }
 }

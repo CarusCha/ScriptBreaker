@@ -47,7 +47,7 @@ class SBInputScriptVC: UIViewController {
     
     
     @objc func breakDownPressed() {
-        
+        print(SBSentenceExtractor.extract(self.scriptTV.text))
     }
     
     
