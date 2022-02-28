@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D3DDD7E27CD289000352DAB /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DDD7D27CD289000352DAB /* Storyboard+Extension.swift */; };
+		6D3DDD8127CD292A00352DAB /* SBWordListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DDD8027CD292A00352DAB /* SBWordListVC.swift */; };
+		6D3DDD8327CD293E00352DAB /* SBWordListSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3DDD8227CD293E00352DAB /* SBWordListSB.storyboard */; };
 		6DABCEF027C2091F00398896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCEEF27C2091F00398896 /* AppDelegate.swift */; };
 		6DABCEF227C2091F00398896 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCEF127C2091F00398896 /* SceneDelegate.swift */; };
 		6DABCEF927C2092100398896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DABCEF827C2092100398896 /* Assets.xcassets */; };
@@ -18,9 +21,14 @@
 		6DABCF1427C53D4400398896 /* SBWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF1327C53D4400398896 /* SBWord.swift */; };
 		6DABCF1627C53D4B00398896 /* SBSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF1527C53D4B00398896 /* SBSentence.swift */; };
 		6DABCF1927C53DC300398896 /* SBSentenceExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF1827C53DC300398896 /* SBSentenceExtractor.swift */; };
+		6DABCF1C27CD237900398896 /* SBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF1A27CD237900398896 /* SBTabBarController.swift */; };
+		6DABCF1D27CD237900398896 /* SBTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DABCF1B27CD237900398896 /* SBTabBarController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D3DDD7D27CD289000352DAB /* Storyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
+		6D3DDD8027CD292A00352DAB /* SBWordListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBWordListVC.swift; sourceTree = "<group>"; };
+		6D3DDD8227CD293E00352DAB /* SBWordListSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SBWordListSB.storyboard; sourceTree = "<group>"; };
 		6DABCEEC27C2091F00398896 /* scriptBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scriptBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DABCEEF27C2091F00398896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DABCEF127C2091F00398896 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +42,8 @@
 		6DABCF1327C53D4400398896 /* SBWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBWord.swift; sourceTree = "<group>"; };
 		6DABCF1527C53D4B00398896 /* SBSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBSentence.swift; sourceTree = "<group>"; };
 		6DABCF1827C53DC300398896 /* SBSentenceExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBSentenceExtractor.swift; sourceTree = "<group>"; };
+		6DABCF1A27CD237900398896 /* SBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTabBarController.swift; sourceTree = "<group>"; };
+		6DABCF1B27CD237900398896 /* SBTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBTabBarController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D3DDD7F27CD290300352DAB /* Words */ = {
+			isa = PBXGroup;
+			children = (
+				6D3DDD8027CD292A00352DAB /* SBWordListVC.swift */,
+				6D3DDD8227CD293E00352DAB /* SBWordListSB.storyboard */,
+			);
+			path = Words;
+			sourceTree = "<group>";
+		};
 		6DABCEE327C2091F00398896 = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +100,9 @@
 		6DABCF0327C2096F00398896 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6DABCF0527C20BC000398896 /* SBInputScriptVC.swift */,
+				6DABCF1E27CD237C00398896 /* TabBar */,
+				6D3DDD7F27CD290300352DAB /* Words */,
+				6DABCF1F27CD254900398896 /* InputScript */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -90,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				6DABCEFA27C2092100398896 /* LaunchScreen.storyboard */,
-				6DABCF0727C20C0E00398896 /* SBInputScriptSB.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -100,6 +120,7 @@
 			children = (
 				6DABCF0A27C2A35F00398896 /* ViewController+Extension.swift */,
 				6DABCF1127C537B600398896 /* String+Extension.swift */,
+				6D3DDD7D27CD289000352DAB /* Storyboard+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -112,6 +133,24 @@
 				6DABCF1327C53D4400398896 /* SBWord.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6DABCF1E27CD237C00398896 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				6DABCF1A27CD237900398896 /* SBTabBarController.swift */,
+				6DABCF1B27CD237900398896 /* SBTabBarController.xib */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		6DABCF1F27CD254900398896 /* InputScript */ = {
+			isa = PBXGroup;
+			children = (
+				6DABCF0527C20BC000398896 /* SBInputScriptVC.swift */,
+				6DABCF0727C20C0E00398896 /* SBInputScriptSB.storyboard */,
+			);
+			path = InputScript;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +211,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3DDD8327CD293E00352DAB /* SBWordListSB.storyboard in Resources */,
+				6DABCF1D27CD237900398896 /* SBTabBarController.xib in Resources */,
 				6DABCF0827C20C0E00398896 /* SBInputScriptSB.storyboard in Resources */,
 				6DABCEFC27C2092100398896 /* LaunchScreen.storyboard in Resources */,
 				6DABCEF927C2092100398896 /* Assets.xcassets in Resources */,
@@ -186,12 +227,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DABCF1427C53D4400398896 /* SBWord.swift in Sources */,
+				6DABCF1C27CD237900398896 /* SBTabBarController.swift in Sources */,
 				6DABCF1627C53D4B00398896 /* SBSentence.swift in Sources */,
 				6DABCF1927C53DC300398896 /* SBSentenceExtractor.swift in Sources */,
 				6DABCF1227C537B600398896 /* String+Extension.swift in Sources */,
 				6DABCF0B27C2A35F00398896 /* ViewController+Extension.swift in Sources */,
 				6DABCEF027C2091F00398896 /* AppDelegate.swift in Sources */,
 				6DABCEF227C2091F00398896 /* SceneDelegate.swift in Sources */,
+				6D3DDD7E27CD289000352DAB /* Storyboard+Extension.swift in Sources */,
+				6D3DDD8127CD292A00352DAB /* SBWordListVC.swift in Sources */,
 				6DABCF0627C20BC000398896 /* SBInputScriptVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +382,6 @@
 				INFOPLIST_FILE = scriptBreaker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SBInputScriptSB;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -367,7 +410,6 @@
 				INFOPLIST_FILE = scriptBreaker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SBInputScriptSB;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

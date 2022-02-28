@@ -17,6 +17,9 @@ class SBInputScriptVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "SBInputScriptVC"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         breakDownBTN.addTarget(self, action: #selector(breakDownPressed), for: .touchUpInside)
         
         setUI()
