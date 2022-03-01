@@ -29,5 +29,9 @@ extension String {
             return []
         }
     }
+    
+    var localized: String {
+        return self // TODO:
+    }
 }
 
