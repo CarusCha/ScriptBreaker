@@ -15,13 +15,16 @@ class SBWord {
         case adjective
     }
     
-    var word: String?
-    weak var sentence: SBSentence?
+    var referenceID: String = UUID().uuidString
+    var text: String?
     var meaning: String?
-    var phrase: String?
     var wordClass: WordClass?
+    weak var paragraph: SBParagraph?
+    weak var sentence: SBSentence?
     
-    init(_ word: String) {
-        self.word = word
+    init(_ word: String, paragraph: SBParagraph?, sentence: SBSentence?) {
+        self.text = word.lowercased()
+        self.paragraph = paragraph
+        self.sentence = sentence
     }
 }

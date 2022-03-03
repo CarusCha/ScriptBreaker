@@ -1,14 +1,16 @@
 //
-//  SBWordListTVCell.swift
+//  SBWordsTableViewCell.swift
 //  scriptBreaker
 //
-//  Created by carus on 1/3/2022.
+//  Created by carus on 3/3/2022.
 //
 
 import UIKit
 
-class SBWordListTVCell: UITableViewCell {
+class SBWordsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var wordLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +21,5 @@ class SBWordListTVCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

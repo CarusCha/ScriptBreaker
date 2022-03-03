@@ -8,14 +8,19 @@
 import Foundation
 
 class SBSentence {
-    var wordList: [SBWord]?
+    var referenceID: String = UUID().uuidString
+    var text: String
+    weak var paragraph: SBParagraph?
+    var words: [SBWord]?
     
-    init(_ sentence: String) {
-        self.wordList = sentence.matches(for: "[A-Za-z]+").compactMap({ str in
-            let word = SBWord(str)
-            word.sentence = self
-            return word
-        })
+    init(_ sentence: String, paragraph: SBParagraph) {
+        self.text = sentence
+        self.paragraph = paragraph
+        self.words = toWords()
     }
 
+    func toWords() -> [SBWord]? {
+        // How to handle apostrophe?
+        self.text.matches(for: "[A-Za-z]+").compactMap{SBWord($0, paragraph: self.paragraph, sentence: self)}
+    }
 }

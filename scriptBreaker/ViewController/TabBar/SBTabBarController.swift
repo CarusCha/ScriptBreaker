@@ -19,7 +19,7 @@ class SBTabBarController: UITabBarController {
     func setupViewControllers() {
         
         let inputScriptVC = UIStoryboard.getViewController("SBInputScriptSB", viewControllerIdentifier: "SBInputScriptVC", navigation: true)
-        let wordListVC = UIStoryboard.getViewController("SBWordListSB", viewControllerIdentifier: "SBWordListVC", navigation: true)
+        let wordListVC = UIStoryboard.getViewController("SBWordsSB", viewControllerIdentifier: "SBWordsVC", navigation: true)
         
         viewControllers = [
             inputScriptVC,
