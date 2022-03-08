@@ -18,7 +18,14 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DTm-8J-Nef">
                                 <rect key="frame" x="20" y="64" width="374" height="708"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">RegExr was created by gskinner.com, and is proudly hosted by Media Temple.
+
+Edit the Expression &amp; Text to see matches. Roll over matches or the expression for details. PCRE &amp; JavaScript flavors of RegEx are supported. Validate your expression with Tests mode.
+
+The side bar includes a Cheatsheet, full Reference, and Help. You can also Save &amp; Share with the Community, and view patterns you create or favorite in My Patterns.
+
+Explore results with the Tools below. Replace &amp; List output custom results. Details lists capture groups. Explain describes your expression in plain English.
+I don't like you.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
