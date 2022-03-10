@@ -7,31 +7,28 @@
 
 import UIKit
 
+protocol SBWordsTableViewDelegate {
+    func didSetParagraph(_ wordList: [SBWord])
+    
+}
+
 class SBWordsTableView: UIView {
     
     var tableView: UITableView!
-    var paragraph: SBParagraph?
-    var wordList: [SBWord]? {
-        return paragraph?.sentences?.compactMap{$0.words}.flatMap{$0}
+    var paragraph: SBParagraph? {
+        didSet {
+            wordList = paragraph?.sentences?.compactMap{$0.words}.flatMap{$0}
+            delegate?.didSetParagraph(wordList ?? [])
+        }
     }
+    public private(set) var wordList: [SBWord]?
+    
+    var delegate: SBWordsTableViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         viewInit()
     }
-    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
-    deinit {
-        
-    }
-
     
     func viewInit() {
         tableView = UITableView()
@@ -51,6 +48,10 @@ class SBWordsTableView: UIView {
     
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    deinit {
+        print("deinit")
     }
 }
 
@@ -73,21 +74,5 @@ extension SBWordsTableView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-    
-    
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 50
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let footerView = UIView()
-//        return footerView
-//    }
-    
-    
-    
-    
-
-    
     
 }

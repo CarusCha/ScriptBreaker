@@ -53,11 +53,9 @@ class SBInputScriptVC: UIViewController {
         let paragraph = SBParagraph(scriptTV.text)
         if let wordsVC = UIStoryboard.getViewController("SBWordsSB", viewControllerIdentifier: "SBWordsVC") as? SBWordsVC {
             
-            
             self.modalTransitionStyle = .partialCurl
             self.present(wordsVC, animated: true) {
-                wordsVC.wordsTableView.paragraph = paragraph
-                wordsVC.wordsTableView.reloadData()
+                wordsVC.setContent(.add, paragraph: paragraph)
             }
         }
         
