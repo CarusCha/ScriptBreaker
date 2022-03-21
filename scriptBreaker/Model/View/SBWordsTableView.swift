@@ -7,14 +7,16 @@
 
 import UIKit
 
-protocol SBWordsTableViewDelegate {
+protocol SBWordsTableViewDelegate: AnyObject {
     func didSetParagraph(_ wordList: [SBWord])
-    
+    func didPressTopButton()
 }
 
 class SBWordsTableView: UIView {
     
     var tableView: UITableView!
+    var topView: LabelAndButtonView!
+    
     var paragraph: SBParagraph? {
         didSet {
             wordList = paragraph?.sentences?.compactMap{$0.words}.flatMap{$0}
@@ -31,23 +33,43 @@ class SBWordsTableView: UIView {
     }
     
     func viewInit() {
+        // Set TopView
+        topView = LabelAndButtonView()
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(topView)
+        topView.button.addTarget(self, action: #selector(topButtonPressed), for: .touchUpInside)
+
+        // Set TableView
         tableView = UITableView()
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "SBWordsTableViewCell", bundle: nil), forCellReuseIdentifier: "SBWordsTableViewCell")
+        
+        // Constraints
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            topView.heightAnchor.constraint(equalToConstant: 40),
+            topView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            topView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            topView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: topView.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: self.rightAnchor)
         ])
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "SBWordsTableViewCell", bundle: nil), forCellReuseIdentifier: "SBWordsTableViewCell")
+
+        
     }
     
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    @objc func topButtonPressed() {
+        delegate?.didPressTopButton()
     }
     
     deinit {

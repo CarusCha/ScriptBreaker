@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +18,14 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DTm-8J-Nef">
                                 <rect key="frame" x="20" y="64" width="374" height="708"/>
-                                <mutableString key="text">RegExr was created by gskinner.com, and is proudly hosted by Media Temple.
+                                <string key="text">RegExr was created by gskinner.com, and is proudly hosted by Media Temple.
 
 Edit the Expression &amp; Text to see matches. Roll over matches or the expression for details. PCRE &amp; JavaScript flavors of RegEx are supported. Validate your expression with Tests mode.
 
 The side bar includes a Cheatsheet, full Reference, and Help. You can also Save &amp; Share with the Community, and view patterns you create or favorite in My Patterns.
 
 Explore results with the Tools below. Replace &amp; List output custom results. Details lists capture groups. Explain describes your expression in plain English.
-I don't like you.</mutableString>
+I don't like you.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

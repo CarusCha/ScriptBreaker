@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,65 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="thh-S0-FaL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNQ-Zb-0PQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfo-f9-0fW">
-                                                <rect key="frame" x="10" y="0.0" width="394" height="50"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgj-dV-UvY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cme-1Q-pAt">
-                                                        <rect key="frame" x="294" y="0.0" width="100" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="Tjc-Op-wxY"/>
-                                                            <constraint firstAttribute="height" constant="50" id="kS4-sp-5hK"/>
-                                                        </constraints>
-                                                        <color key="tintColor" systemColor="systemGreenColor"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                                        <connections>
-                                                            <action selector="saveBTNPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gn5-7g-sYb"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Bfo-f9-0fW" secondAttribute="trailing" constant="10" id="0qe-lP-kQP"/>
-                                            <constraint firstAttribute="bottom" secondItem="Bfo-f9-0fW" secondAttribute="bottom" id="IIV-5j-XE8"/>
-                                            <constraint firstItem="Bfo-f9-0fW" firstAttribute="top" secondItem="QNQ-Zb-0PQ" secondAttribute="top" id="iUm-1F-6UO"/>
-                                            <constraint firstItem="Bfo-f9-0fW" firstAttribute="leading" secondItem="QNQ-Zb-0PQ" secondAttribute="leading" constant="10" id="lhb-dS-5kf"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkJ-Bq-Qla" customClass="SBWordsTableView" customModule="scriptBreaker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="802"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkJ-Bq-Qla" customClass="SBWordsTableView" customModule="scriptBreaker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="thh-S0-FaL" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Pf7-gB-0LZ"/>
-                            <constraint firstItem="thh-S0-FaL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wqe-mm-qe6"/>
-                            <constraint firstAttribute="bottom" secondItem="thh-S0-FaL" secondAttribute="bottom" id="ZqD-EL-XQb"/>
-                            <constraint firstItem="thh-S0-FaL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="flC-q9-v1h"/>
+                            <constraint firstItem="jkJ-Bq-Qla" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="5Ib-BW-0he"/>
+                            <constraint firstItem="jkJ-Bq-Qla" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="AYC-rq-R5e"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="jkJ-Bq-Qla" secondAttribute="bottom" id="lC2-ze-PnA"/>
+                            <constraint firstItem="jkJ-Bq-Qla" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="my5-qf-RbW"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="saveBTN" destination="Cme-1Q-pAt" id="R4N-EH-G30"/>
-                        <outlet property="topView" destination="QNQ-Zb-0PQ" id="8qA-tW-Ojd"/>
-                        <outlet property="totalNumLB" destination="zgj-dV-UvY" id="hqb-eU-Wes"/>
                         <outlet property="wordsTableView" destination="jkJ-Bq-Qla" id="mRY-lB-ZhP"/>
                     </connections>
                 </viewController>
@@ -86,9 +42,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

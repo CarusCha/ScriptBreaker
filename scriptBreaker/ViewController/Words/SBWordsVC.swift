@@ -14,11 +14,6 @@ class SBWordsVC: UIViewController {
         case list
     }
     
-    @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var totalNumLB: UILabel!
-    @IBOutlet weak var saveBTN: UIButton!
-//    var viewType: ViewType = .list
-    
     @IBOutlet weak var wordsTableView: SBWordsTableView!
     
     override func viewDidLoad() {
@@ -26,29 +21,27 @@ class SBWordsVC: UIViewController {
 
         navigationItem.title = "Word List".localized
         navigationController?.navigationBar.prefersLargeTitles = true
-        saveBTN.setTitle("Save".localized, for: .normal)
-        topView.isHidden = true
+        wordsTableView.topView.button.setTitle("Save".localized, for: .normal)
+        wordsTableView.topView.isHidden = true
     }
     
     func setContent(_ viewType: ViewType, paragraph: SBParagraph?) {
-        topView.isHidden = viewType == .list // TODO: - Move topView to SBWordsTableView..
+        wordsTableView.topView.isHidden = viewType == .list
         wordsTableView.delegate = self
         wordsTableView.paragraph = paragraph
-    }
-    
-    @IBAction func saveBTNPressed(_ sender: UIButton) {
-        
     }
     
 
 }
 
 
-
-
 extension SBWordsVC: SBWordsTableViewDelegate {
+    func didPressTopButton() {
+        print("save")
+    }
+    
     func didSetParagraph(_ wordList: [SBWord]) {
-        totalNumLB.text = "Total \(wordList.count)"
+        wordsTableView.topView.titleLB.text = "Total \(wordList.count)"
         wordsTableView.reloadData()
     }
 }
