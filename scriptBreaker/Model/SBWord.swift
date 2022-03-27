@@ -8,7 +8,7 @@
 import Foundation
 
 class SBWord {
-    enum WordClass {
+    enum WordClass: Int {
         case noun
         case verb
         case adverb
@@ -19,12 +19,17 @@ class SBWord {
     var text: String?
     var meaning: String?
     var wordClass: WordClass?
-    weak var paragraph: SBParagraph?
     weak var sentence: SBSentence?
     
-    init(_ word: String, paragraph: SBParagraph?, sentence: SBSentence?) {
+    init(_ word: String, sentence: SBSentence?) {
         self.text = word.lowercased()
-        self.paragraph = paragraph
         self.sentence = sentence
+        
+    }
+    
+    init(_ word: Word) {
+        self.text = word.text
     }
 }
+
+

@@ -6,30 +6,76 @@
 //
 
 import UIKit
+import CoreData
 
 class SBWordsVC: UIViewController {
     
     enum ViewType {
         case add
         case list
+        
+        var title: String {
+            switch self {
+            case .add: return "Save".localized
+            case .list: return "New".localized
+            }
+        }
     }
     
     @IBOutlet weak var wordsTableView: SBWordsTableView!
+    
+    var type: ViewType = .list
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "Word List".localized
         navigationController?.navigationBar.prefersLargeTitles = true
-        wordsTableView.topView.button.setTitle("Save".localized, for: .normal)
         wordsTableView.topView.isHidden = true
+        wordsTableView.delegate = self
     }
     
-    func setContent(_ viewType: ViewType, paragraph: SBParagraph?) {
-        wordsTableView.topView.isHidden = viewType == .list
-        wordsTableView.delegate = self
-        wordsTableView.paragraph = paragraph
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        wordsTableView.topView.button.setTitle(type.title, for: .normal)
+        if type == .list {
+            fetchCoreDataWord()
+        }
     }
+    
+    func setContent(_ wordList: [SBWord]?) {
+        wordsTableView.wordList = wordList
+    }
+    
+    
+    func saveCoreDataWord() {
+        let context = SBCoreDataManager.shared.persistentContainer.viewContext
+        if let entity = NSEntityDescription.entity(forEntityName: "Word", in: context) {
+            for newWord in wordsTableView.wordList ?? [] {
+                let word = NSManagedObject(entity: entity, insertInto: context)
+                word.setValue(newWord.text, forKey: "text")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func fetchCoreDataWord() {
+        let context = SBCoreDataManager.shared.persistentContainer.viewContext
+        do {
+            let wordList = try context.fetch(Word.fetchRequest()) as! [Word]
+            setContent(wordList.map({ SBWord($0)}))
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+
     
 
 }
@@ -37,11 +83,18 @@ class SBWordsVC: UIViewController {
 
 extension SBWordsVC: SBWordsTableViewDelegate {
     func didPressTopButton() {
-        print("save")
+        if type == .add {
+            // TODO: - Show loading and unable interaction
+            saveCoreDataWord()
+            dismiss(animated: true)
+        }
+
+        
     }
     
-    func didSetParagraph(_ wordList: [SBWord]) {
-        wordsTableView.topView.titleLB.text = "Total \(wordList.count)"
+    func didSetWords(_ wordsCount: Int) {
+        wordsTableView.topView.titleLB.text = "Total \(wordsCount)"
         wordsTableView.reloadData()
+        wordsTableView.topView.isHidden = false
     }
 }

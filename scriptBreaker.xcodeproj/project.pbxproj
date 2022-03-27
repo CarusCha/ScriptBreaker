@@ -27,6 +27,8 @@
 		6DABCF1627C53D4B00398896 /* SBSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF1527C53D4B00398896 /* SBSentence.swift */; };
 		6DABCF1C27CD237900398896 /* SBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DABCF1A27CD237900398896 /* SBTabBarController.swift */; };
 		6DABCF1D27CD237900398896 /* SBTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DABCF1B27CD237900398896 /* SBTabBarController.xib */; };
+		6DBDC0CC27F0BF3000E374C7 /* WordModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDC0CA27F0BF3000E374C7 /* WordModel.xcdatamodeld */; };
+		6DBDC0DC27F0C69D00E374C7 /* SBCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDC0DB27F0C69D00E374C7 /* SBCoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		6DABCF1527C53D4B00398896 /* SBSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBSentence.swift; sourceTree = "<group>"; };
 		6DABCF1A27CD237900398896 /* SBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTabBarController.swift; sourceTree = "<group>"; };
 		6DABCF1B27CD237900398896 /* SBTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBTabBarController.xib; sourceTree = "<group>"; };
+		6DBDC0CB27F0BF3000E374C7 /* WordModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordModel.xcdatamodel; sourceTree = "<group>"; };
+		6DBDC0DB27F0C69D00E374C7 /* SBCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBCoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +128,10 @@
 				6DABCF0C27C3FBEE00398896 /* Model */,
 				6D3204D327D1115700445689 /* Helper */,
 				6DABCF0927C2A34A00398896 /* Extension */,
+				6DBDC0DA27F0C68F00E374C7 /* CoreData */,
 				6DABCEEF27C2091F00398896 /* AppDelegate.swift */,
 				6DABCEF127C2091F00398896 /* SceneDelegate.swift */,
+				6DBDC0CA27F0BF3000E374C7 /* WordModel.xcdatamodeld */,
 				6DABCEF827C2092100398896 /* Assets.xcassets */,
 				6DABCEFD27C2092100398896 /* Info.plist */,
 			);
@@ -187,6 +193,14 @@
 				6DABCF0727C20C0E00398896 /* SBInputScriptSB.storyboard */,
 			);
 			path = InputScript;
+			sourceTree = "<group>";
+		};
+		6DBDC0DA27F0C68F00E374C7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6DBDC0DB27F0C69D00E374C7 /* SBCoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +279,10 @@
 			files = (
 				6DABCF1427C53D4400398896 /* SBWord.swift in Sources */,
 				6DABCF1C27CD237900398896 /* SBTabBarController.swift in Sources */,
+				6DBDC0CC27F0BF3000E374C7 /* WordModel.xcdatamodeld in Sources */,
 				6D3204DA27D1182F00445689 /* SBWordsTableView.swift in Sources */,
 				6DABCF1627C53D4B00398896 /* SBSentence.swift in Sources */,
+				6DBDC0DC27F0C69D00E374C7 /* SBCoreDataManager.swift in Sources */,
 				6DABCF1227C537B600398896 /* String+Extension.swift in Sources */,
 				6DABCF0B27C2A35F00398896 /* ViewController+Extension.swift in Sources */,
 				6DABCEF027C2091F00398896 /* AppDelegate.swift in Sources */,
@@ -488,6 +504,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6DBDC0CA27F0BF3000E374C7 /* WordModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6DBDC0CB27F0BF3000E374C7 /* WordModel.xcdatamodel */,
+			);
+			currentVersion = 6DBDC0CB27F0BF3000E374C7 /* WordModel.xcdatamodel */;
+			path = WordModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6DABCEE427C2091F00398896 /* Project object */;
 }

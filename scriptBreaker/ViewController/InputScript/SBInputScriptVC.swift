@@ -52,10 +52,9 @@ class SBInputScriptVC: UIViewController {
     @objc func breakDownPressed() {
         let paragraph = SBParagraph(scriptTV.text)
         if let wordsVC = UIStoryboard.getViewController("SBWordsSB", viewControllerIdentifier: "SBWordsVC") as? SBWordsVC {
-            
-            self.modalTransitionStyle = .partialCurl
+            wordsVC.type = .add
             self.present(wordsVC, animated: true) {
-                wordsVC.setContent(.add, paragraph: paragraph)
+                wordsVC.setContent(paragraph.sentences?.compactMap{$0.words}.flatMap{$0} )
             }
         }
         

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Paragraph" representedClassName="Paragraph" syncable="YES" codeGenerationType="class">
+        <attribute name="referenceID" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="sentences" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sentence" inverseName="paragraph" inverseEntity="Sentence"/>
+    </entity>
+    <entity name="Sentence" representedClassName="Sentence" syncable="YES" codeGenerationType="class">
+        <attribute name="referenceID" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="paragraph" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Paragraph" inverseName="sentences" inverseEntity="Paragraph"/>
+        <relationship name="words" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="sentence" inverseEntity="Word"/>
+    </entity>
+    <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
+        <attribute name="meaning" optional="YES" attributeType="String"/>
+        <attribute name="referenceID" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="wordClass" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="sentence" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sentence" inverseName="words" inverseEntity="Sentence"/>
+    </entity>
+    <elements>
+        <element name="Word" positionX="68.37835693359375" positionY="-158.1237182617188" width="128" height="118"/>
+        <element name="Sentence" positionX="-161.3656005859375" positionY="-157.8588256835938" width="128" height="103"/>
+        <element name="Paragraph" positionX="-369.0699462890625" positionY="-156.2575073242188" width="128" height="88"/>
+    </elements>
+</model>

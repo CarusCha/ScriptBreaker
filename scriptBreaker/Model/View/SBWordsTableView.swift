@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SBWordsTableViewDelegate: AnyObject {
-    func didSetParagraph(_ wordList: [SBWord])
+    func didSetWords(_ wordsCount: Int)
     func didPressTopButton()
 }
 
@@ -16,16 +16,13 @@ class SBWordsTableView: UIView {
     
     var tableView: UITableView!
     var topView: LabelAndButtonView!
-    
-    var paragraph: SBParagraph? {
+    var wordList: [SBWord]? {
         didSet {
-            wordList = paragraph?.sentences?.compactMap{$0.words}.flatMap{$0}
-            delegate?.didSetParagraph(wordList ?? [])
+            delegate?.didSetWords(wordList?.count ?? 0)
         }
     }
-    public private(set) var wordList: [SBWord]?
     
-    var delegate: SBWordsTableViewDelegate?
+    weak var delegate: SBWordsTableViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,7 +51,7 @@ class SBWordsTableView: UIView {
             topView.leftAnchor.constraint(equalTo: self.leftAnchor),
             topView.rightAnchor.constraint(equalTo: self.rightAnchor),
             
-            tableView.topAnchor.constraint(equalTo: topView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 10),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: self.rightAnchor)

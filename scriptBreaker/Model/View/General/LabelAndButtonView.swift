@@ -27,6 +27,7 @@ class LabelAndButtonView: UIView {
     }
     
     func viewInit() {
+        // TODO: - Need a close button
         titleLB = UILabel()
         titleLB.translatesAutoresizingMaskIntoConstraints = false
         addSubview(titleLB)

@@ -21,6 +21,6 @@ class SBSentence {
 
     func toWords() -> [SBWord]? {
         // How to handle apostrophe?
-        self.text.matches(for: "[A-Z]+('+[A-Z])?").compactMap{SBWord($0, paragraph: self.paragraph, sentence: self)}
+        self.text.matches(for: "[A-Z]+('+[A-Z])?").compactMap{SBWord($0, sentence: self)}
     }
 }
