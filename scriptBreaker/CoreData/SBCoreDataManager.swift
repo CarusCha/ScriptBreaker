@@ -34,4 +34,21 @@ class SBCoreDataManager {
             }
         }
     }
+    
+    func deleteAllEntities() {
+        let entities = persistentContainer.managedObjectModel.entities
+        for entity in entities {
+            delete(entityName: entity.name!)
+        }
+    }
+
+    func delete(entityName: String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try persistentContainer.viewContext.execute(deleteRequest)
+        } catch let error as NSError {
+            debugPrint(error)
+        }
+    }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class SBWordsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var wordContentView: WordContentView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
